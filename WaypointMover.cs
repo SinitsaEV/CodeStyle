@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class WaypointMover : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-
     [SerializeField] private Transform _wayPointsParent;
     [SerializeField] private Transform[] _wayPoints;
+    [SerializeField] private float _speed; 
     private int _wayPointIndex = 0;
 
     private void Awake()
@@ -20,7 +19,6 @@ public class WaypointMover : MonoBehaviour
     {
         Transform currentWayPoint = _wayPoints[_wayPointIndex];
         transform.position = Vector3.MoveTowards(transform.position, currentWayPoint.position, _speed * Time.deltaTime);
-
 
         if (transform.position == currentWayPoint.position) 
             SelectNextWayPoint();
