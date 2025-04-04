@@ -4,14 +4,12 @@ using UnityEngine;
 public class BulletShooter : MonoBehaviour
 {
     [SerializeField] private Transform _target;
-    private Vector3 _direction;
-
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private float _bulletSpeed;
-
     [SerializeField] private float _delay;
     [SerializeField] private bool _isWork = true;
     private WaitForSeconds _shootDelay;
+    private Vector3 _direction;
 
     private void Awake()
     {
